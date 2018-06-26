@@ -16,6 +16,8 @@
 		99C96C2A20E283B300974920 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2620E283B200974920 /* ProximaNova-Regular.otf */; };
 		99C96C2B20E283B300974920 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2720E283B200974920 /* ProximaNova-Light.otf */; };
 		99C96C2C20E283B300974920 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2820E283B200974920 /* ProximaNova-Bold.otf */; };
+		99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C2F20E2861800974920 /* UIFontAdditions.swift */; };
+		99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3120E2862800974920 /* UIColorAdditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		99C96C2620E283B200974920 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		99C96C2720E283B200974920 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		99C96C2820E283B200974920 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		99C96C2F20E2861800974920 /* UIFontAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontAdditions.swift; sourceTree = "<group>"; };
+		99C96C3120E2862800974920 /* UIColorAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorAdditions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		99C96C1720E281E400974920 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C2F20E2861800974920 /* UIFontAdditions.swift */,
+				99C96C3120E2862800974920 /* UIColorAdditions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99C96C0720E281BC00974920 /* ViewController.swift in Sources */,
+				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
+				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
