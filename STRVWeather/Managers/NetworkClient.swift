@@ -69,7 +69,7 @@ class NetworkClient {
             }
         }
     }
-
+    
     // MARK: - Current Weather
     
     func getCurrentWeather(forLocation location: CLLocation, completion: @escaping (CurrentWeather?, NSError?) -> Void) {
