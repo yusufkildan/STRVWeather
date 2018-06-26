@@ -27,6 +27,8 @@
 		99C96C4220E29B7200974920 /* AccessorizedLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */; };
 		99C96C4420E2A19100974920 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4320E2A19100974920 /* LocationManager.swift */; };
 		99C96C4620E2A3B600974920 /* NSErrorAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4520E2A3B600974920 /* NSErrorAdditions.swift */; };
+		99C96C4820E2A45100974920 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4720E2A45100974920 /* NetworkClient.swift */; };
+		99C96C4A20E2A83100974920 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4920E2A83100974920 /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorizedLabelView.swift; sourceTree = "<group>"; };
 		99C96C4320E2A19100974920 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		99C96C4520E2A3B600974920 /* NSErrorAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSErrorAdditions.swift; sourceTree = "<group>"; };
+		99C96C4720E2A45100974920 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		99C96C4920E2A83100974920 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				99C96C4320E2A19100974920 /* LocationManager.swift */,
+				99C96C4720E2A45100974920 /* NetworkClient.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 		99C96C2120E2830400974920 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C4920E2A83100974920 /* CurrentWeather.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -394,7 +400,9 @@
 				99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */,
 				99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
+				99C96C4820E2A45100974920 /* NetworkClient.swift in Sources */,
 				99C96C3E20E298D400974920 /* ForecastTableViewController.swift in Sources */,
+				99C96C4A20E2A83100974920 /* CurrentWeather.swift in Sources */,
 				99C96C4220E29B7200974920 /* AccessorizedLabelView.swift in Sources */,
 				99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */,
 				99C96C4620E2A3B600974920 /* NSErrorAdditions.swift in Sources */,

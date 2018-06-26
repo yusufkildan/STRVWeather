@@ -49,9 +49,15 @@ class TodayViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
-        
         createUserInterface()
+        
+        LocationManager.sharedManager.requestLocationAccessPermission { (granted, error) in
+            if granted {
+                self.loadData(withRefresh: true)
+            } else {
+                // TODO: - Show Empty State View
+            }
+        }
     }
     
     // MARK: - Interface
@@ -222,9 +228,69 @@ class TodayViewController: BaseViewController {
     
     // MARK: - Load Data
     
-    override func loadData(withRefresh refresh: Bool) -> Bool {
+    @discardableResult override func loadData(withRefresh refresh: Bool) -> Bool {
         if !super.loadData(withRefresh: refresh) {
             return false
+        }
+        
+        LocationManager.sharedManager.requestCurrentLocation { (location, error) in
+            if let error = error {
+                self.finishLoading(withState: ControllerState.error,
+                                   andMessage: error.localizedDescription)
+                
+                return
+            }
+            
+            guard let location = location else {
+                return
+            }
+            
+            NetworkClient.sharedClient.getCurrentWeather(forLocation: location, completion: { (weather, error) in
+                if let error = error {
+                    self.finishLoading(withState: ControllerState.error,
+                                       andMessage: error.localizedDescription)
+                    
+                    return
+                }
+                
+                guard let weather = weather else {
+                    return
+                }
+                
+                if let city = weather.city, let country = weather.country {
+                    let location = city + ", " + country
+                    self.locationLabel.title = location
+                }
+                
+                self.weatherImageView.image = weather.weatherImage
+                
+                if let temperature = weather.temperature, let description = weather.weatherDescription {
+                    self.weatherDetailLabel.text = "\(temperature)°C | \(description.capitalized)"
+                }
+                
+                if let humidity = weather.humidity {
+                    self.humidityLabel.title = "\(humidity)%"
+                }
+                
+                if let precipitation = weather.precipitation {
+                    self.precipitationLabel.title = "\(precipitation / 100.0) mm%"
+                }
+                
+                if let wind = weather.wind {
+                    self.windLabel.title = "\(wind) km/h"
+                }
+                
+                if let windDirection = weather.windDirection {
+                    self.windDirectionLabel.title = windDirection
+                }
+                
+                if let pressure = weather.pressure {
+                    self.pressureLabel.title = "\(pressure) hPa"
+                }
+                
+                self.finishLoading(withState: ControllerState.none,
+                                   andMessage: nil)
+            })
         }
         
         return true
@@ -236,4 +302,3 @@ class TodayViewController: BaseViewController {
         // TODO: - Show UIActivityViewController
     }
 }
-

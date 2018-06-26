@@ -10,7 +10,6 @@ import Foundation
 import CoreLocation
 
 class LocationManager: NSObject {
-    static let sharedManager = LocationManager()
     
     fileprivate var locationManager: CLLocationManager!
     
@@ -18,6 +17,10 @@ class LocationManager: NSObject {
     fileprivate var currentLocationCompletion: ((CLLocation?, NSError?) -> Void)!
     
     fileprivate var currentLocation: CLLocation?
+    
+    // MARK: - Shared Manager
+    
+    static let sharedManager = LocationManager()
     
     // MARK: - Constructor
     
