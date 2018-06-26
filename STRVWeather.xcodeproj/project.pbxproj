@@ -156,6 +156,7 @@
 		99C96C1A20E281FE00974920 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C4920E2A83100974920 /* CurrentWeather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,7 +215,6 @@
 		99C96C2120E2830400974920 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				99C96C4920E2A83100974920 /* CurrentWeather.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
