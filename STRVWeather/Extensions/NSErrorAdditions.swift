@@ -27,7 +27,9 @@ enum ErrorCode: Int {
 
 extension NSError {
     class func inlineErrorWithErrorCode(code: ErrorCode) -> NSError {
-        return NSError(domain: NetworkClientErrorDomain, code: code.rawValue, userInfo: nil)
+        return NSError(domain: NetworkClientErrorDomain,
+                       code: code.rawValue,
+                       userInfo: nil)
     }
     
     class func inlineErrorWith(Code code: Int?, andMessage message: String?) -> NSError {
