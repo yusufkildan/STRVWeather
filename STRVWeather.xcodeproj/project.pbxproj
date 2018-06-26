@@ -19,6 +19,9 @@
 		99C96C2C20E283B300974920 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2820E283B200974920 /* ProximaNova-Bold.otf */; };
 		99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C2F20E2861800974920 /* UIFontAdditions.swift */; };
 		99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3120E2862800974920 /* UIColorAdditions.swift */; };
+		99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3720E297CB00974920 /* BaseNavigationController.swift */; };
+		99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3920E297F800974920 /* BaseViewController.swift */; };
+		99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3B20E2980900974920 /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		99C96C2820E283B200974920 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		99C96C2F20E2861800974920 /* UIFontAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontAdditions.swift; sourceTree = "<group>"; };
 		99C96C3120E2862800974920 /* UIColorAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorAdditions.swift; sourceTree = "<group>"; };
+		99C96C3720E297CB00974920 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		99C96C3920E297F800974920 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		99C96C3B20E2980900974920 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,9 @@
 		99C96C1E20E282D200974920 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C3720E297CB00974920 /* BaseNavigationController.swift */,
+				99C96C3920E297F800974920 /* BaseViewController.swift */,
+				99C96C3B20E2980900974920 /* BaseTableViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -365,7 +374,10 @@
 				99C96C0720E281BC00974920 /* ViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
+				99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */,
+				99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
+				99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
