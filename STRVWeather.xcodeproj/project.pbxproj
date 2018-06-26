@@ -30,6 +30,7 @@
 		99C96C4820E2A45100974920 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4720E2A45100974920 /* NetworkClient.swift */; };
 		99C96C4A20E2A83100974920 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4920E2A83100974920 /* CurrentWeather.swift */; };
 		99C96C4C20E2BC4000974920 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4B20E2BC4000974920 /* Helpers.swift */; };
+		99C96C4E20E2C3A000974920 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4D20E2C3A000974920 /* ForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		99C96C4720E2A45100974920 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		99C96C4920E2A83100974920 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		99C96C4B20E2BC4000974920 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		99C96C4D20E2C3A000974920 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		99C96C2120E2830400974920 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C4D20E2C3A000974920 /* ForecastTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C96C4E20E2C3A000974920 /* ForecastTableViewCell.swift in Sources */,
 				99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
