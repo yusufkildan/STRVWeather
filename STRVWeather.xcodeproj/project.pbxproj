@@ -24,6 +24,7 @@
 		99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3B20E2980900974920 /* BaseTableViewController.swift */; };
 		99C96C3E20E298D400974920 /* ForecastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3D20E298D400974920 /* ForecastTableViewController.swift */; };
 		99C96C4020E2996400974920 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3F20E2996400974920 /* TabBarController.swift */; };
+		99C96C4220E29B7200974920 /* AccessorizedLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		99C96C3B20E2980900974920 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		99C96C3D20E298D400974920 /* ForecastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewController.swift; sourceTree = "<group>"; };
 		99C96C3F20E2996400974920 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorizedLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		99C96C1F20E282E600974920 /* Modular */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
 				99C96C3E20E298D400974920 /* ForecastTableViewController.swift in Sources */,
+				99C96C4220E29B7200974920 /* AccessorizedLabelView.swift in Sources */,
 				99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
