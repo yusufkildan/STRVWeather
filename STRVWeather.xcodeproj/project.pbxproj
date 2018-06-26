@@ -12,6 +12,10 @@
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
 		99C96C0C20E281BD00974920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0B20E281BD00974920 /* Assets.xcassets */; };
 		99C96C0F20E281BD00974920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0D20E281BD00974920 /* LaunchScreen.storyboard */; };
+		99C96C2920E283B300974920 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2520E283B200974920 /* ProximaNova-Semibold.otf */; };
+		99C96C2A20E283B300974920 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2620E283B200974920 /* ProximaNova-Regular.otf */; };
+		99C96C2B20E283B300974920 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2720E283B200974920 /* ProximaNova-Light.otf */; };
+		99C96C2C20E283B300974920 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C2820E283B200974920 /* ProximaNova-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		99C96C0B20E281BD00974920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99C96C0E20E281BD00974920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99C96C1020E281BD00974920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99C96C2520E283B200974920 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		99C96C2620E283B200974920 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		99C96C2720E283B200974920 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		99C96C2820E283B200974920 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,138 @@
 		99C96C0320E281BC00974920 /* STRVWeather */ = {
 			isa = PBXGroup;
 			children = (
-				99C96C0420E281BC00974920 /* AppDelegate.swift */,
-				99C96C0620E281BC00974920 /* ViewController.swift */,
-				99C96C0820E281BC00974920 /* Main.storyboard */,
-				99C96C0B20E281BD00974920 /* Assets.xcassets */,
-				99C96C0D20E281BD00974920 /* LaunchScreen.storyboard */,
+				99C96C1C20E2820C00974920 /* Resources */,
+				99C96C1B20E2820500974920 /* Delegates */,
+				99C96C1A20E281FE00974920 /* Models */,
+				99C96C1920E281FA00974920 /* Views */,
+				99C96C1820E281F200974920 /* Controllers */,
+				99C96C1720E281E400974920 /* Extensions */,
+				99C96C1620E281DC00974920 /* Managers */,
 				99C96C1020E281BD00974920 /* Info.plist */,
 			);
 			path = STRVWeather;
+			sourceTree = "<group>";
+		};
+		99C96C1620E281DC00974920 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		99C96C1720E281E400974920 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99C96C1820E281F200974920 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C0620E281BC00974920 /* ViewController.swift */,
+				99C96C1E20E282D200974920 /* Common */,
+				99C96C1D20E282C200974920 /* TabBarController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		99C96C1920E281FA00974920 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C2120E2830400974920 /* Cells */,
+				99C96C2020E282F700974920 /* HeaderFooterViews */,
+				99C96C1F20E282E600974920 /* Modular */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99C96C1A20E281FE00974920 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		99C96C1B20E2820500974920 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C0420E281BC00974920 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		99C96C1C20E2820C00974920 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C0B20E281BD00974920 /* Assets.xcassets */,
+				99C96C2320E2831B00974920 /* Fonts */,
+				99C96C2220E2831100974920 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		99C96C1D20E282C200974920 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		99C96C1E20E282D200974920 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		99C96C1F20E282E600974920 /* Modular */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modular;
+			sourceTree = "<group>";
+		};
+		99C96C2020E282F700974920 /* HeaderFooterViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HeaderFooterViews;
+			sourceTree = "<group>";
+		};
+		99C96C2120E2830400974920 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		99C96C2220E2831100974920 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C0820E281BC00974920 /* Main.storyboard */,
+				99C96C0D20E281BD00974920 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		99C96C2320E2831B00974920 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C2420E2839F00974920 /* ProximaNova */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		99C96C2420E2839F00974920 /* ProximaNova */ = {
+			isa = PBXGroup;
+			children = (
+				99C96C2820E283B200974920 /* ProximaNova-Bold.otf */,
+				99C96C2720E283B200974920 /* ProximaNova-Light.otf */,
+				99C96C2620E283B200974920 /* ProximaNova-Regular.otf */,
+				99C96C2520E283B200974920 /* ProximaNova-Semibold.otf */,
+			);
+			path = ProximaNova;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99C96C0F20E281BD00974920 /* LaunchScreen.storyboard in Resources */,
+				99C96C2A20E283B300974920 /* ProximaNova-Regular.otf in Resources */,
+				99C96C2C20E283B300974920 /* ProximaNova-Bold.otf in Resources */,
 				99C96C0C20E281BD00974920 /* Assets.xcassets in Resources */,
 				99C96C0A20E281BC00974920 /* Main.storyboard in Resources */,
+				99C96C2920E283B300974920 /* ProximaNova-Semibold.otf in Resources */,
+				99C96C2B20E283B300974920 /* ProximaNova-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS6988L5X8;
 				INFOPLIST_FILE = STRVWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TS6988L5X8;
 				INFOPLIST_FILE = STRVWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
