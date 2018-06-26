@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F7A78A7FD33552AF183B2B4 /* Pods_STRVWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2C66717461A797F5CA80C4 /* Pods_STRVWeather.framework */; };
 		99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0420E281BC00974920 /* AppDelegate.swift */; };
-		99C96C0720E281BC00974920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* ViewController.swift */; };
+		99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* TodayViewController.swift */; };
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
 		99C96C0C20E281BD00974920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0B20E281BD00974920 /* Assets.xcassets */; };
 		99C96C0F20E281BD00974920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0D20E281BD00974920 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,8 @@
 		99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3720E297CB00974920 /* BaseNavigationController.swift */; };
 		99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3920E297F800974920 /* BaseViewController.swift */; };
 		99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3B20E2980900974920 /* BaseTableViewController.swift */; };
+		99C96C3E20E298D400974920 /* ForecastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3D20E298D400974920 /* ForecastTableViewController.swift */; };
+		99C96C4020E2996400974920 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C3F20E2996400974920 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,7 @@
 		394406B90788B4A98F17E6F9 /* Pods-STRVWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STRVWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STRVWeather/Pods-STRVWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		99C96C0120E281BC00974920 /* STRVWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRVWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C96C0420E281BC00974920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99C96C0620E281BC00974920 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99C96C0620E281BC00974920 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		99C96C0920E281BC00974920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99C96C0B20E281BD00974920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99C96C0E20E281BD00974920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		99C96C3720E297CB00974920 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		99C96C3920E297F800974920 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		99C96C3B20E2980900974920 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		99C96C3D20E298D400974920 /* ForecastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewController.swift; sourceTree = "<group>"; };
+		99C96C3F20E2996400974920 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,8 @@
 		99C96C1820E281F200974920 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				99C96C0620E281BC00974920 /* ViewController.swift */,
+				99C96C3D20E298D400974920 /* ForecastTableViewController.swift */,
+				99C96C0620E281BC00974920 /* TodayViewController.swift */,
 				99C96C1E20E282D200974920 /* Common */,
 				99C96C1D20E282C200974920 /* TabBarController */,
 			);
@@ -163,6 +168,7 @@
 		99C96C1D20E282C200974920 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C3F20E2996400974920 /* TabBarController.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -371,12 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C96C0720E281BC00974920 /* ViewController.swift in Sources */,
+				99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
+				99C96C4020E2996400974920 /* TabBarController.swift in Sources */,
 				99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */,
 				99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
+				99C96C3E20E298D400974920 /* ForecastTableViewController.swift in Sources */,
 				99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
