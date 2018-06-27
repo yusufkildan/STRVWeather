@@ -31,6 +31,9 @@
 		99C96C4A20E2A83100974920 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4920E2A83100974920 /* CurrentWeather.swift */; };
 		99C96C4C20E2BC4000974920 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4B20E2BC4000974920 /* Helpers.swift */; };
 		99C96C4E20E2C3A000974920 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4D20E2C3A000974920 /* ForecastTableViewCell.swift */; };
+		99C96C5020E2C87300974920 /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C4F20E2C87300974920 /* DailyForecast.swift */; };
+		99C96C5220E2CF2A00974920 /* DayIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5120E2CF2A00974920 /* DayIdentifier.swift */; };
+		99C96C5420E2D1AC00974920 /* ForecastTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5320E2D1AC00974920 /* ForecastTableViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		99C96C4920E2A83100974920 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		99C96C4B20E2BC4000974920 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		99C96C4D20E2C3A000974920 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		99C96C4F20E2C87300974920 /* DailyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecast.swift; sourceTree = "<group>"; };
+		99C96C5120E2CF2A00974920 /* DayIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIdentifier.swift; sourceTree = "<group>"; };
+		99C96C5320E2D1AC00974920 /* ForecastTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,8 @@
 			children = (
 				99C96C4920E2A83100974920 /* CurrentWeather.swift */,
 				99C96C4B20E2BC4000974920 /* Helpers.swift */,
+				99C96C4F20E2C87300974920 /* DailyForecast.swift */,
+				99C96C5120E2CF2A00974920 /* DayIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 		99C96C2020E282F700974920 /* HeaderFooterViews */ = {
 			isa = PBXGroup;
 			children = (
+				99C96C5320E2D1AC00974920 /* ForecastTableViewHeaderView.swift */,
 			);
 			path = HeaderFooterViews;
 			sourceTree = "<group>";
@@ -398,14 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C96C5020E2C87300974920 /* DailyForecast.swift in Sources */,
 				99C96C4E20E2C3A000974920 /* ForecastTableViewCell.swift in Sources */,
 				99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
 				99C96C4C20E2BC4000974920 /* Helpers.swift in Sources */,
 				99C96C4420E2A19100974920 /* LocationManager.swift in Sources */,
+				99C96C5220E2CF2A00974920 /* DayIdentifier.swift in Sources */,
 				99C96C4020E2996400974920 /* TabBarController.swift in Sources */,
 				99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */,
+				99C96C5420E2D1AC00974920 /* ForecastTableViewHeaderView.swift in Sources */,
 				99C96C3820E297CB00974920 /* BaseNavigationController.swift in Sources */,
 				99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */,
 				99C96C4820E2A45100974920 /* NetworkClient.swift in Sources */,

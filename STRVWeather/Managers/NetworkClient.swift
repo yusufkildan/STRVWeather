@@ -12,7 +12,7 @@ import CoreLocation
 import SwiftyJSON
 
 fileprivate let APIKey               = "e86f277ef313b7554a37049b02d3224f"
-fileprivate let APIBaseURL           = "http://api.openweathermap.org/data/2.5"
+fileprivate let APIBaseURL           = "https://api.openweathermap.org/data/2.5"
 fileprivate let CurrentWeatherPath   = "/weather"
 fileprivate let FiveDayForecastPath  = "/forecast"
 
@@ -95,6 +95,43 @@ class NetworkClient {
             let currentWeather = CurrentWeather(withJSON: json)
             
             completion(currentWeather, nil)
+        }
+    }
+    
+    // MARK: - Five Day Forecast
+    
+    func getFiveDayForecast(forLocation location: CLLocation, completion: @escaping ([DailyForecast]?, NSError?) -> Void) {
+        var parameters = [String: Any]()
+        
+        parameters["lat"]    = location.coordinate.latitude
+        parameters["lon"]    = location.coordinate.longitude
+        parameters["appid"]  = APIKey
+        
+        performRequest(forPath: FiveDayForecastPath, withParameters: parameters) { (data, response, error) in
+            if let error = error {
+                
+                completion(nil, error)
+                
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            let forecastListJSON = JSON(data)["list"].arrayValue
+            let cityName = JSON(data)["city"]["name"].stringValue
+            
+            var forecasts = [Forecast]()
+            
+            for json in forecastListJSON {
+                let forecast = Forecast(withJSON: json, andCityName: cityName)
+                forecasts.append(forecast)
+            }
+            
+            let dailyForecast = DailyForecast.groupForecasts(forecasts: forecasts)
+            
+            completion(dailyForecast, nil)
         }
     }
     

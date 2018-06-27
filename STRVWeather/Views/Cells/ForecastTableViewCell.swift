@@ -116,7 +116,7 @@ class ForecastTableViewCell: UITableViewCell {
     
     // MARK: - Cell Height
     
-    class func cellHeight() {
+    class func cellHeight() -> CGFloat {
         return 90.0
     }
 }

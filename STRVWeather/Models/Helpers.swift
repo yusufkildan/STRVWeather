@@ -8,14 +8,9 @@
 
 import UIKit
 
-enum AssetType {
-    case big
-    case small
-}
-
 class Helpers {
     
-    // MARK: - Functions
+    // MARK: - Helper Functions
     
     class func windDirectionFromDegrees(degrees: Float) -> String {
         
