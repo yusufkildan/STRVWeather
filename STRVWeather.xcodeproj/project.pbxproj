@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F7A78A7FD33552AF183B2B4 /* Pods_STRVWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2C66717461A797F5CA80C4 /* Pods_STRVWeather.framework */; };
+		997F991320E37D2C00E95159 /* STRVWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991220E37D2C00E95159 /* STRVWeatherTests.swift */; };
 		99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0420E281BC00974920 /* AppDelegate.swift */; };
 		99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* TodayViewController.swift */; };
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
@@ -36,10 +37,23 @@
 		99C96C5420E2D1AC00974920 /* ForecastTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5320E2D1AC00974920 /* ForecastTableViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		997F991520E37D2C00E95159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99C96BF920E281BC00974920 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99C96C0020E281BC00974920;
+			remoteInfo = STRVWeather;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A2C66717461A797F5CA80C4 /* Pods_STRVWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STRVWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9C20A8BBFC52CA39C27A2 /* Pods-STRVWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STRVWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-STRVWeather/Pods-STRVWeather.release.xcconfig"; sourceTree = "<group>"; };
 		394406B90788B4A98F17E6F9 /* Pods-STRVWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STRVWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STRVWeather/Pods-STRVWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		997F991020E37D2C00E95159 /* STRVWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STRVWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		997F991220E37D2C00E95159 /* STRVWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STRVWeatherTests.swift; sourceTree = "<group>"; };
+		997F991420E37D2C00E95159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99C96C0120E281BC00974920 /* STRVWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRVWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C96C0420E281BC00974920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C96C0620E281BC00974920 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		997F990D20E37D2C00E95159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C96BFE20E281BC00974920 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,10 +111,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		997F991120E37D2C00E95159 /* STRVWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				997F991220E37D2C00E95159 /* STRVWeatherTests.swift */,
+				997F991420E37D2C00E95159 /* Info.plist */,
+			);
+			path = STRVWeatherTests;
+			sourceTree = "<group>";
+		};
 		99C96BF820E281BC00974920 = {
 			isa = PBXGroup;
 			children = (
 				99C96C0320E281BC00974920 /* STRVWeather */,
+				997F991120E37D2C00E95159 /* STRVWeatherTests */,
 				99C96C0220E281BC00974920 /* Products */,
 				CC40CB5773D3DE604FE0765F /* Pods */,
 				00F8B8818683D03369F5895D /* Frameworks */,
@@ -104,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				99C96C0120E281BC00974920 /* STRVWeather.app */,
+				997F991020E37D2C00E95159 /* STRVWeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +306,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		997F990F20E37D2C00E95159 /* STRVWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 997F991920E37D2C00E95159 /* Build configuration list for PBXNativeTarget "STRVWeatherTests" */;
+			buildPhases = (
+				997F990C20E37D2C00E95159 /* Sources */,
+				997F990D20E37D2C00E95159 /* Frameworks */,
+				997F990E20E37D2C00E95159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				997F991620E37D2C00E95159 /* PBXTargetDependency */,
+			);
+			name = STRVWeatherTests;
+			productName = STRVWeatherTests;
+			productReference = 997F991020E37D2C00E95159 /* STRVWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		99C96C0020E281BC00974920 /* STRVWeather */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C96C1320E281BD00974920 /* Build configuration list for PBXNativeTarget "STRVWeather" */;
@@ -304,6 +354,10 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = yusuf_kildan;
 				TargetAttributes = {
+					997F990F20E37D2C00E95159 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 99C96C0020E281BC00974920;
+					};
 					99C96C0020E281BC00974920 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -323,11 +377,19 @@
 			projectRoot = "";
 			targets = (
 				99C96C0020E281BC00974920 /* STRVWeather */,
+				997F990F20E37D2C00E95159 /* STRVWeatherTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		997F990E20E37D2C00E95159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C96BFF20E281BC00974920 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +465,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		997F990C20E37D2C00E95159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997F991320E37D2C00E95159 /* STRVWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99C96BFD20E281BC00974920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +501,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		997F991620E37D2C00E95159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99C96C0020E281BC00974920 /* STRVWeather */;
+			targetProxy = 997F991520E37D2C00E95159 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		99C96C0820E281BC00974920 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -451,6 +529,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		997F991720E37D2C00E95159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS6988L5X8;
+				INFOPLIST_FILE = STRVWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.STRVWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STRVWeather.app/STRVWeather";
+			};
+			name = Debug;
+		};
+		997F991820E37D2C00E95159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS6988L5X8;
+				INFOPLIST_FILE = STRVWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yusufkildan.STRVWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STRVWeather.app/STRVWeather";
+			};
+			name = Release;
+		};
 		99C96C1120E281BD00974920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -608,6 +726,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		997F991920E37D2C00E95159 /* Build configuration list for PBXNativeTarget "STRVWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				997F991720E37D2C00E95159 /* Debug */,
+				997F991820E37D2C00E95159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		99C96BFC20E281BC00974920 /* Build configuration list for PBXProject "STRVWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
