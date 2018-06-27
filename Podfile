@@ -11,4 +11,6 @@ target 'STRVWeather' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftyBeaver'
   pod 'RealmSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database’
 end

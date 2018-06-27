@@ -8,6 +8,7 @@
 
 import UIKit
 import PureLayout
+import Firebase
 
 class TodayViewController: BaseViewController {
     
@@ -290,6 +291,10 @@ class TodayViewController: BaseViewController {
                 
                 RealmManager.sharedManager.saveCurrentWeather(weather: weather)
                 
+                Database.database().reference().child("Forecasts").childByAutoId().updateChildValues(["lat": location.coordinate.latitude,
+                                                                                      "lon": location.coordinate.longitude,
+                                                                                      "temperature": weather.temperature])
+                
                 self.finishLoading(withState: ControllerState.none, andMessage: nil)
                 
                 self.configureUI(withWeather: weather)
@@ -302,6 +307,10 @@ class TodayViewController: BaseViewController {
     // MARK: - Actions
     
     @objc func didTapShareButton(_ button: UIButton) {
-        // TODO: - Show UIActivityViewController
+        let url = NSURL(string: "https://www.openweathermap.org")!
+        let text = "Get current weather, a daily forecast for 16 days, and a forecast for 5 days for every 3 hours. Helpful stats and charts are available for your reference. Interactive maps show precipitation, clouds, pressure, and wind around your location."
+        
+        let controller = UIActivityViewController(activityItems: [text, url], applicationActivities: nil)
+        navigationController?.present(controller, animated: true, completion: nil)
     }
 }
