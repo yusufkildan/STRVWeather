@@ -61,8 +61,11 @@ class ForecastTableViewController: BaseTableViewController {
             return false
         }
         
+        log.debug("Request current location.")
         LocationManager.sharedManager.requestCurrentLocation { (location, error) in
             if let error = error {
+                log.error("Location request failed: \(error.localizedDescription)")
+                
                 self.finishLoading(withState: ControllerState.error,
                                    andMessage: error.localizedDescription)
                 
@@ -73,8 +76,13 @@ class ForecastTableViewController: BaseTableViewController {
                 return
             }
             
+            log.debug("Location request success: \(location)")
+        
+            log.debug("Request five day forecast.")
             NetworkClient.sharedClient.getFiveDayForecast(forLocation: location, completion: { (dailyForecasts, error) in
                 if let error = error {
+                    log.error("Five day forecast request failed: \(error.localizedDescription)")
+                    
                     self.finishLoading(withState: ControllerState.error,
                                        andMessage: error.localizedDescription)
                     
@@ -82,6 +90,8 @@ class ForecastTableViewController: BaseTableViewController {
                 }
                 
                 guard let dailyForecasts = dailyForecasts else {
+                    log.error("Error getting five day forecast.")
+                    
                     return
                 }
                 

@@ -7,7 +7,20 @@
 		<key>STRVWeather.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>997F990F20E37D2C00E95159</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99C96C0020E281BC00974920</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

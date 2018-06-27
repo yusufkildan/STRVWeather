@@ -41,7 +41,7 @@ class NetworkClient {
             let error = defaultDataResponse.error
             
             if self.shouldShowLogs {
-                print(response as Any)
+                log.debug(response as Any)
             }
             
             self.hideApplicationNetworkActivityIndicator()
@@ -60,7 +60,7 @@ class NetworkClient {
                         return
                     }
                     
-                    print(dataString)
+                    log.debug(dataString)
                 }
                 
                 completion(localData, response, nil)

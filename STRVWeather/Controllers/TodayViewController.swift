@@ -51,7 +51,11 @@ class TodayViewController: BaseViewController {
         
         createUserInterface()
         
+        log.debug("Request location access permission.")
         LocationManager.sharedManager.requestLocationAccessPermission { (granted, error) in
+            
+            log.debug("Granded: \(granted)")
+            
             if granted {
                 self.loadData(withRefresh: true)
             } else {
@@ -233,8 +237,11 @@ class TodayViewController: BaseViewController {
             return false
         }
         
+        log.debug("Request current location.")
         LocationManager.sharedManager.requestCurrentLocation { (location, error) in
             if let error = error {
+                log.error("Location request failed: \(error.localizedDescription)")
+                
                 self.finishLoading(withState: ControllerState.error,
                                    andMessage: error.localizedDescription)
                 
@@ -245,8 +252,13 @@ class TodayViewController: BaseViewController {
                 return
             }
             
+            log.debug("Location request success: \(location)")
+            
+            log.debug("Request current weather.")
             NetworkClient.sharedClient.getCurrentWeather(forLocation: location, completion: { (weather, error) in
                 if let error = error {
+                    log.error("Current weather request failed: \(error.localizedDescription)")
+                    
                     self.finishLoading(withState: ControllerState.error,
                                        andMessage: error.localizedDescription)
                     
@@ -256,7 +268,7 @@ class TodayViewController: BaseViewController {
                 guard let weather = weather else {
                     return
                 }
-                
+
                 if let city = weather.city, let country = weather.country {
                     let location = city + ", " + country
                     self.locationLabel.title = location

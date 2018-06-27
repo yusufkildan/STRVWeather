@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F7A78A7FD33552AF183B2B4 /* Pods_STRVWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2C66717461A797F5CA80C4 /* Pods_STRVWeather.framework */; };
 		997F991320E37D2C00E95159 /* STRVWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991220E37D2C00E95159 /* STRVWeatherTests.swift */; };
+		997F991B20E38D7200E95159 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991A20E38D7200E95159 /* Log.swift */; };
 		99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0420E281BC00974920 /* AppDelegate.swift */; };
 		99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* TodayViewController.swift */; };
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		997F991020E37D2C00E95159 /* STRVWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STRVWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		997F991220E37D2C00E95159 /* STRVWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STRVWeatherTests.swift; sourceTree = "<group>"; };
 		997F991420E37D2C00E95159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		997F991A20E38D7200E95159 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		99C96C0120E281BC00974920 /* STRVWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRVWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C96C0420E281BC00974920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C96C0620E281BC00974920 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				99C96C1720E281E400974920 /* Extensions */,
 				99C96C1620E281DC00974920 /* Managers */,
 				99C96C1020E281BD00974920 /* Info.plist */,
+				997F991A20E38D7200E95159 /* Log.swift */,
 			);
 			path = STRVWeather;
 			sourceTree = "<group>";
@@ -449,12 +452,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-STRVWeather/Pods-STRVWeather-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +484,7 @@
 			files = (
 				99C96C5020E2C87300974920 /* DailyForecast.swift in Sources */,
 				99C96C4E20E2C3A000974920 /* ForecastTableViewCell.swift in Sources */,
+				997F991B20E38D7200E95159 /* Log.swift in Sources */,
 				99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
