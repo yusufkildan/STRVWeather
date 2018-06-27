@@ -10,6 +10,7 @@
 		2F7A78A7FD33552AF183B2B4 /* Pods_STRVWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2C66717461A797F5CA80C4 /* Pods_STRVWeather.framework */; };
 		997F991320E37D2C00E95159 /* STRVWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991220E37D2C00E95159 /* STRVWeatherTests.swift */; };
 		997F991B20E38D7200E95159 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991A20E38D7200E95159 /* Log.swift */; };
+		997F991E20E3B62A00E95159 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991D20E3B62A00E95159 /* RealmManager.swift */; };
 		99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0420E281BC00974920 /* AppDelegate.swift */; };
 		99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* TodayViewController.swift */; };
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		997F991220E37D2C00E95159 /* STRVWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STRVWeatherTests.swift; sourceTree = "<group>"; };
 		997F991420E37D2C00E95159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		997F991A20E38D7200E95159 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		997F991D20E3B62A00E95159 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		99C96C0120E281BC00974920 /* STRVWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRVWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C96C0420E281BC00974920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C96C0620E281BC00974920 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				99C96C4320E2A19100974920 /* LocationManager.swift */,
 				99C96C4720E2A45100974920 /* NetworkClient.swift */,
+				997F991D20E3B62A00E95159 /* RealmManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				997F991B20E38D7200E95159 /* Log.swift in Sources */,
 				99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */,
 				99C96C3220E2862800974920 /* UIColorAdditions.swift in Sources */,
+				997F991E20E3B62A00E95159 /* RealmManager.swift in Sources */,
 				99C96C3020E2861800974920 /* UIFontAdditions.swift in Sources */,
 				99C96C4C20E2BC4000974920 /* Helpers.swift in Sources */,
 				99C96C4420E2A19100974920 /* LocationManager.swift in Sources */,

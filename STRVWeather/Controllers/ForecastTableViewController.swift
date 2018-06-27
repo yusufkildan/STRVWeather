@@ -45,6 +45,10 @@ class ForecastTableViewController: BaseTableViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 104.0, bottom: 0.0, right: 0.0)
         tableView.backgroundView = UIView()
         
+        let forecastArray = Array(RealmManager().getFiveDayForecast())
+        self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecastArray)
+        self.tableView.reloadData()
+        
         loadData(withRefresh: true)
     }
     
@@ -79,23 +83,27 @@ class ForecastTableViewController: BaseTableViewController {
             log.debug("Location request success: \(location)")
         
             log.debug("Request five day forecast.")
-            NetworkClient.sharedClient.getFiveDayForecast(forLocation: location, completion: { (dailyForecasts, error) in
+            NetworkClient.sharedClient.getFiveDayForecast(forLocation: location, completion: { (forecasts, error) in
                 if let error = error {
                     log.error("Five day forecast request failed: \(error.localizedDescription)")
                     
                     self.finishLoading(withState: ControllerState.error,
                                        andMessage: error.localizedDescription)
+                    self.endRefreshing()
                     
                     return
                 }
                 
-                guard let dailyForecasts = dailyForecasts else {
+                guard let forecasts = forecasts else {
                     log.error("Error getting five day forecast.")
                     
                     return
                 }
                 
-                self.dailyForecasts = dailyForecasts
+                RealmManager().saveFiveDayForecast(forecasts: forecasts)
+                
+                self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecasts)
+                
                 
                 self.tableView.reloadData()
                 self.finishLoading(withState: ControllerState.none, andMessage: nil)
@@ -116,25 +124,14 @@ class ForecastTableViewController: BaseTableViewController {
         let forecast = dailyForecasts[indexPath.section].forecasts[indexPath.row]
         
         cell.weatherImage = forecast.weatherImage
+        cell.weatherDescription = forecast.weatherDescription.capitalized
+        cell.temperature = "\(forecast.temperature)°"
         
-        if let weatherDescription = forecast.weatherDescription {
-            cell.weatherDescription = weatherDescription.capitalized
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
         
-        if let temperature = forecast.temperature {
-            cell.temperature = "\(temperature)°"
-        }
-        
-        if let date = forecast.date {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            
-            cell.time = dateFormatter.string(from: date)
-        }
-        
-        if let cityName = forecast.city {
-            self.navigationItem.title = cityName
-        }
+        cell.time = dateFormatter.string(from: forecast.date)
+        self.navigationItem.title = forecast.city
     }
     
     fileprivate func configure(ForecastTableViewHeaderView headerView: ForecastTableViewHeaderView, withSection section: Int) {
@@ -156,18 +153,6 @@ class ForecastTableViewController: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? ForecastTableViewCell else {
-            return
-        }
-        
-        cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            cell.layer.transform = CATransform3DIdentity
-        }, completion: nil)
     }
     
     // MARK: - UITableViewDataSource

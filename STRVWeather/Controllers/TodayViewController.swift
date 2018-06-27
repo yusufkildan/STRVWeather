@@ -62,6 +62,17 @@ class TodayViewController: BaseViewController {
                 // TODO: - Show Empty State View
             }
         }
+        
+        if let currentWeather = RealmManager().getCurrentWeather() {
+            self.weatherDetailLabel.text = "\(currentWeather.temperature)°C | \(currentWeather.weatherDescription.capitalized)"
+            self.weatherImageView.image = currentWeather.weatherImage
+            self.locationLabel.title = currentWeather.city + ", " + currentWeather.country
+            self.humidityLabel.title = "\(currentWeather.humidity)%"
+            self.precipitationLabel.title = "\(currentWeather.precipitation / 100.0) mm%"
+            self.windLabel.title = "\(currentWeather.wind) km/h"
+            self.windDirectionLabel.title = currentWeather.windDirection
+            self.pressureLabel.title = "\(currentWeather.pressure) hPa"
+        }
     }
     
     // MARK: - Interface
@@ -268,37 +279,18 @@ class TodayViewController: BaseViewController {
                 guard let weather = weather else {
                     return
                 }
-
-                if let city = weather.city, let country = weather.country {
-                    let location = city + ", " + country
-                    self.locationLabel.title = location
-                }
                 
+                RealmManager().saveCurrentWeather(weather: weather)
+                
+                self.finishLoading(withState: ControllerState.none, andMessage: nil)
+                self.weatherDetailLabel.text = "\(weather.temperature)°C | \(weather.weatherDescription.capitalized)"
                 self.weatherImageView.image = weather.weatherImage
-                
-                if let temperature = weather.temperature, let description = weather.weatherDescription {
-                    self.weatherDetailLabel.text = "\(temperature)°C | \(description.capitalized)"
-                }
-                
-                if let humidity = weather.humidity {
-                    self.humidityLabel.title = "\(humidity)%"
-                }
-                
-                if let precipitation = weather.precipitation {
-                    self.precipitationLabel.title = "\(precipitation / 100.0) mm%"
-                }
-                
-                if let wind = weather.wind {
-                    self.windLabel.title = "\(wind) km/h"
-                }
-                
-                if let windDirection = weather.windDirection {
-                    self.windDirectionLabel.title = windDirection
-                }
-                
-                if let pressure = weather.pressure {
-                    self.pressureLabel.title = "\(pressure) hPa"
-                }
+                self.locationLabel.title = weather.city + ", " + weather.country
+                self.humidityLabel.title = "\(weather.humidity)%"
+                self.precipitationLabel.title = "\(weather.precipitation / 100.0) mm%"
+                self.windLabel.title = "\(weather.wind) km/h"
+                self.windDirectionLabel.title = weather.windDirection
+                self.pressureLabel.title = "\(weather.pressure) hPa"
                 
                 self.finishLoading(withState: ControllerState.none,
                                    andMessage: nil)

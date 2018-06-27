@@ -20,9 +20,7 @@ class BaseViewController: UIViewController {
     fileprivate var subComponentsHolderView: UIView!
     
     fileprivate var loadingIndicator: UIActivityIndicatorView!
-    
-    fileprivate var statusLabel: UILabel!
-    
+
     fileprivate var state: ControllerState! = ControllerState.none
     
     var strictBackgroundColor: UIColor? {
@@ -59,9 +57,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         subComponentsHolderView = UIView.newAutoLayout()
-        subComponentsHolderView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                            action: #selector(didTapSubComponentsHolderBackground(_:))))
-        
+
         view.addSubview(subComponentsHolderView)
         
         subComponentsHolderView.autoPinEdge(toSuperviewEdge: ALEdge.left)
@@ -156,34 +152,13 @@ class BaseViewController: UIViewController {
     func finishLoading(withState state: ControllerState, andMessage message: String?) {
         switch state {
         case .none:
-            if let label = statusLabel {
-                label.isHidden = true
-                
-                label.text = ""
-            }
-            
             setSubComponents(Visible: false, animated: true, completion: {
                 self.stopLoading()
             })
         case .error:
-            if statusLabel == nil {
-                statusLabel = UILabel.newAutoLayout()
-                statusLabel.textAlignment = NSTextAlignment.center
-                statusLabel.textColor = UIColor.primaryDarkTextColor()
-                statusLabel.font = UIFont.proximaNovaSemiboldFont(withSize: 16.0)
-                statusLabel.numberOfLines = 0
+            setSubComponents(Visible: false, animated: true, completion: {
                 
-                subComponentsHolderView.addSubview(statusLabel)
-                
-                let insets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-                statusLabel.autoPinEdgesToSuperviewEdges(with: insets)
-            }
-            
-            setSubComponents(Visible: true, animated: true, completion: {
-                self.statusLabel.isHidden = false
-                
-                self.statusLabel.text = message
-                
+                self.displayAlertWith(title: "Error", andMessage: message!)
                 self.stopLoading()
             })
         default:
@@ -202,13 +177,7 @@ class BaseViewController: UIViewController {
             
             loadingIndicator.autoCenterInSuperview()
         }
-        
-        if let label = statusLabel {
-            label.isHidden = true
-            
-            label.text = ""
-        }
-        
+
         loadingIndicator.isHidden = false
         
         loadingIndicator.startAnimating()
@@ -224,18 +193,6 @@ class BaseViewController: UIViewController {
         loadingIndicator.stopAnimating()
         
         loadingIndicator.isHidden = true
-    }
-    
-    // MARK: - Gestures
-    
-    @objc fileprivate func didTapSubComponentsHolderBackground(_ recognizer: UITapGestureRecognizer) {
-        if state == ControllerState.error {
-            backgroundTapHandlerOnError()
-        }
-    }
-    
-    func backgroundTapHandlerOnError() {
-        loadData(withRefresh: true)
     }
     
     // MARK: - Navigation

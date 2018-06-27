@@ -100,7 +100,7 @@ class NetworkClient {
     
     // MARK: - Five Day Forecast
     
-    func getFiveDayForecast(forLocation location: CLLocation, completion: @escaping ([DailyForecast]?, NSError?) -> Void) {
+    func getFiveDayForecast(forLocation location: CLLocation, completion: @escaping ([Forecast]?, NSError?) -> Void) {
         var parameters = [String: Any]()
         
         parameters["lat"]    = location.coordinate.latitude
@@ -128,10 +128,8 @@ class NetworkClient {
                 let forecast = Forecast(withJSON: json, andCityName: cityName)
                 forecasts.append(forecast)
             }
-            
-            let dailyForecast = DailyForecast.groupForecasts(forecasts: forecasts)
-            
-            completion(dailyForecast, nil)
+
+            completion(forecasts, nil)
         }
     }
     

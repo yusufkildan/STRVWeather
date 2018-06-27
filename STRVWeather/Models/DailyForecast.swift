@@ -8,22 +8,28 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
-class Forecast {
-    var city: String!
-    var temperature: Int!
-    var weatherDescription: String!
-    var weatherImage: UIImage!
-    var date: Date!
+class Forecast: Object {
+    @objc dynamic var city: String = ""
+    @objc dynamic var temperature: Int = 0
+    @objc dynamic var weatherDescription: String = ""
+    @objc dynamic var iconName: String = ""
+    @objc dynamic var date: Date = Date()
+    
+    var weatherImage: UIImage {
+        return Helpers.assetFromIconName(iconName: iconName, isBig: false)
+    }
     
     // MARK: - Constructors
     
-    init(withJSON json: JSON, andCityName cityName: String) {
+    convenience init(withJSON json: JSON, andCityName cityName: String) {
+        self.init()
         city                   = cityName
         temperature            = Helpers.celsiusFromKelvin(kelvin: json["main"]["temp"].doubleValue)
         weatherDescription     = json["weather"][0]["description"].stringValue
         date                   = Date(timeIntervalSince1970: json["dt"].doubleValue)
-        weatherImage           = Helpers.assetFromIconName(iconName: json["weather"][0]["icon"].stringValue, isBig: false)
+        iconName               = json["weather"][0]["icon"].stringValue
     }
 }
 
@@ -50,11 +56,7 @@ class DailyForecast {
         var grouped: [DayIdentifier: [Forecast]] = [:]
         
         for forecast in forecasts {
-            guard let forecastDate = forecast.date else {
-                continue
-            }
-            
-            let components = calendar.dateComponents([.year, .month, .day], from: forecastDate)
+            let components = calendar.dateComponents([.year, .month, .day], from: forecast.date)
             
             let dayIdentifier = DayIdentifier.fromComponents(components: components)
             
@@ -68,7 +70,7 @@ class DailyForecast {
         
         for (dayIdentifier, forecasts) in grouped {
             let sortedForecasts = forecasts.sorted {
-                $0.date! < $1.date!
+                $0.date < $1.date
             }
             
             let dailyForecast = DailyForecast(dayIdentifier: dayIdentifier, forecasts: sortedForecasts)
