@@ -8,26 +8,32 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
-class CurrentWeather {
-    var city: String!
-    var country: String!
-    var temperature: Int!
-    var weatherDescription: String!
-    var humidity: Int!
-    var precipitation: Double!
-    var pressure: Int!
-    var wind: Double!
-    var windDirection: String!
-    var weatherImage: UIImage!
+class CurrentWeather: Object {
+    @objc dynamic var city: String = ""
+    @objc dynamic var country: String = ""
+    @objc dynamic var temperature: Int = 0
+    @objc dynamic var weatherDescription: String = ""
+    @objc dynamic var humidity: Int = 0
+    @objc dynamic var precipitation: Double = 0.0
+    @objc dynamic var pressure: Int = 0
+    @objc dynamic var wind: Double = 0.0
+    @objc dynamic var windDirection: String = ""
+    @objc dynamic var iconName: String = ""
 
+    var weatherImage: UIImage! {
+        return Helpers.assetFromIconName(iconName: iconName, isBig: true)
+    }
+    
     // MARK: - Constructors
     
-    init(withJSON json: JSON) {
+    convenience init(withJSON json: JSON) {
+        self.init()
         city                   = json["name"].stringValue
         country                = json["sys"]["country"].stringValue
         temperature            = Helpers.celsiusFromKelvin(kelvin: json["main"]["temp"].doubleValue)
-        weatherImage           = Helpers.assetFromIconName(iconName: json["weather"][0]["icon"].stringValue, isBig: true)
+        iconName               = json["weather"][0]["icon"].stringValue
         weatherDescription     = json["weather"][0]["description"].stringValue
         humidity               = json["main"]["humidity"].intValue
         precipitation          = json["clouds"]["all"].doubleValue
