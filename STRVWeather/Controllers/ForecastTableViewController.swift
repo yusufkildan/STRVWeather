@@ -45,9 +45,9 @@ class ForecastTableViewController: BaseTableViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 104.0, bottom: 0.0, right: 0.0)
         tableView.backgroundView = UIView()
         
-        let forecastArray = Array(RealmManager().getFiveDayForecast())
+        
+        let forecastArray = Array(RealmManager.sharedManager.getFiveDayForecast())
         self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecastArray)
-        self.tableView.reloadData()
         
         loadData(withRefresh: true)
     }
@@ -81,7 +81,7 @@ class ForecastTableViewController: BaseTableViewController {
             }
             
             log.debug("Location request success: \(location)")
-        
+            
             log.debug("Request five day forecast.")
             NetworkClient.sharedClient.getFiveDayForecast(forLocation: location, completion: { (forecasts, error) in
                 if let error = error {
@@ -100,7 +100,7 @@ class ForecastTableViewController: BaseTableViewController {
                     return
                 }
                 
-                RealmManager().saveFiveDayForecast(forecasts: forecasts)
+                RealmManager.sharedManager.saveFiveDayForecast(forecasts: forecasts)
                 
                 self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecasts)
                 

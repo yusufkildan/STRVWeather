@@ -51,6 +51,12 @@ class TodayViewController: BaseViewController {
         
         createUserInterface()
         
+        if let weather = RealmManager.sharedManager.getCurrentWeather() {
+            configureUI(withWeather: weather)
+            
+            log.debug("UI configured with persisted data.")
+        }
+        
         log.debug("Request location access permission.")
         LocationManager.sharedManager.requestLocationAccessPermission { (granted, error) in
             
@@ -61,17 +67,6 @@ class TodayViewController: BaseViewController {
             } else {
                 // TODO: - Show Empty State View
             }
-        }
-        
-        if let currentWeather = RealmManager().getCurrentWeather() {
-            self.weatherDetailLabel.text = "\(currentWeather.temperature)°C | \(currentWeather.weatherDescription.capitalized)"
-            self.weatherImageView.image = currentWeather.weatherImage
-            self.locationLabel.title = currentWeather.city + ", " + currentWeather.country
-            self.humidityLabel.title = "\(currentWeather.humidity)%"
-            self.precipitationLabel.title = "\(currentWeather.precipitation / 100.0) mm%"
-            self.windLabel.title = "\(currentWeather.wind) km/h"
-            self.windDirectionLabel.title = currentWeather.windDirection
-            self.pressureLabel.title = "\(currentWeather.pressure) hPa"
         }
     }
     
@@ -241,6 +236,19 @@ class TodayViewController: BaseViewController {
         indicatorContainerView.autoPinEdge(toSuperviewEdge: ALEdge.right)
     }
     
+    // MARK: - Configure
+    
+    fileprivate func configureUI(withWeather weather: CurrentWeather) {
+        self.weatherDetailLabel.text = "\(weather.temperature)°C | \(weather.weatherDescription.capitalized)"
+        self.weatherImageView.image = weather.weatherImage
+        self.locationLabel.title = weather.city + ", " + weather.country
+        self.humidityLabel.title = "\(weather.humidity)%"
+        self.precipitationLabel.title = "\(weather.precipitation / 100.0) mm%"
+        self.windLabel.title = "\(weather.wind) km/h"
+        self.windDirectionLabel.title = weather.windDirection
+        self.pressureLabel.title = "\(weather.pressure) hPa"
+    }
+    
     // MARK: - Load Data
     
     @discardableResult override func loadData(withRefresh refresh: Bool) -> Bool {
@@ -280,20 +288,11 @@ class TodayViewController: BaseViewController {
                     return
                 }
                 
-                RealmManager().saveCurrentWeather(weather: weather)
+                RealmManager.sharedManager.saveCurrentWeather(weather: weather)
                 
                 self.finishLoading(withState: ControllerState.none, andMessage: nil)
-                self.weatherDetailLabel.text = "\(weather.temperature)°C | \(weather.weatherDescription.capitalized)"
-                self.weatherImageView.image = weather.weatherImage
-                self.locationLabel.title = weather.city + ", " + weather.country
-                self.humidityLabel.title = "\(weather.humidity)%"
-                self.precipitationLabel.title = "\(weather.precipitation / 100.0) mm%"
-                self.windLabel.title = "\(weather.wind) km/h"
-                self.windDirectionLabel.title = weather.windDirection
-                self.pressureLabel.title = "\(weather.pressure) hPa"
                 
-                self.finishLoading(withState: ControllerState.none,
-                                   andMessage: nil)
+                self.configureUI(withWeather: weather)
             })
         }
         

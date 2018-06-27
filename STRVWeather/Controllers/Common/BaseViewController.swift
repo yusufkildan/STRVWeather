@@ -157,9 +157,13 @@ class BaseViewController: UIViewController {
             })
         case .error:
             setSubComponents(Visible: false, animated: true, completion: {
-                
-                self.displayAlertWith(title: "Error", andMessage: message!)
                 self.stopLoading()
+                
+                guard let message = message else {
+                    return
+                }
+                
+                self.displayAlertWith(title: "Error", andMessage: message)
             })
         default:
             break
