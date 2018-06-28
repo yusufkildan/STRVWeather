@@ -12,6 +12,8 @@
 		997F991B20E38D7200E95159 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991A20E38D7200E95159 /* Log.swift */; };
 		997F991E20E3B62A00E95159 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F991D20E3B62A00E95159 /* RealmManager.swift */; };
 		997F992220E4391C00E95159 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 997F992120E4391C00E95159 /* GoogleService-Info.plist */; };
+		9996B67C20E4E6D80054FE34 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9996B67B20E4E6D80054FE34 /* EmptyStateView.swift */; };
+		9996B67E20E4E7EA0054FE34 /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9996B67D20E4E7EA0054FE34 /* OverlayButton.swift */; };
 		99C96C0520E281BC00974920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0420E281BC00974920 /* AppDelegate.swift */; };
 		99C96C0720E281BC00974920 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C0620E281BC00974920 /* TodayViewController.swift */; };
 		99C96C0A20E281BC00974920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C96C0820E281BC00974920 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		997F991A20E38D7200E95159 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		997F991D20E3B62A00E95159 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		997F992120E4391C00E95159 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9996B67B20E4E6D80054FE34 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		9996B67D20E4E7EA0054FE34 /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
 		99C96C0120E281BC00974920 /* STRVWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRVWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C96C0420E281BC00974920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C96C0620E281BC00974920 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				99C96C4120E29B7200974920 /* AccessorizedLabelView.swift */,
+				9996B67B20E4E6D80054FE34 /* EmptyStateView.swift */,
+				9996B67D20E4E7EA0054FE34 /* OverlayButton.swift */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				99C96C4C20E2BC4000974920 /* Helpers.swift in Sources */,
 				99C96C4420E2A19100974920 /* LocationManager.swift in Sources */,
 				99C96C5220E2CF2A00974920 /* DayIdentifier.swift in Sources */,
+				9996B67C20E4E6D80054FE34 /* EmptyStateView.swift in Sources */,
 				99C96C4020E2996400974920 /* TabBarController.swift in Sources */,
 				99C96C3C20E2980900974920 /* BaseTableViewController.swift in Sources */,
 				99C96C5420E2D1AC00974920 /* ForecastTableViewHeaderView.swift in Sources */,
@@ -503,6 +510,7 @@
 				99C96C4A20E2A83100974920 /* CurrentWeather.swift in Sources */,
 				99C96C4220E29B7200974920 /* AccessorizedLabelView.swift in Sources */,
 				99C96C3A20E297F800974920 /* BaseViewController.swift in Sources */,
+				9996B67E20E4E7EA0054FE34 /* OverlayButton.swift in Sources */,
 				99C96C4620E2A3B600974920 /* NSErrorAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

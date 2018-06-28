@@ -23,6 +23,9 @@ class TodayViewController: BaseViewController {
     fileprivate var windLabel: AccessorizedLabelView!
     fileprivate var windDirectionLabel: AccessorizedLabelView!
     
+    fileprivate var containerStackView: UIStackView!
+    fileprivate var emptyStateView: EmptyStateView!
+    
     fileprivate var separatorViewWidth: CGFloat {
         return self.view.frame.width * 0.4
     }
@@ -65,8 +68,17 @@ class TodayViewController: BaseViewController {
             
             if granted {
                 self.loadData(withRefresh: true)
+                self.emptyStateView.isHidden = true
             } else {
-                // TODO: - Show Empty State View
+                self.emptyStateView.isHidden = false
+                self.emptyStateView.update(withImage: UIImage(named: "LocationService"),
+                                      andMessageTitle: "Enable Location Service",
+                                      andMessageSubtitle: "'STRVWeather' need to know where you are in order to show forecasts!",
+                                      andButtonTitle: "Enable")
+                
+                self.view.addSubview(self.emptyStateView)
+                
+                self.emptyStateView.autoPinEdgesToSuperviewEdges()
             }
         }
     }
@@ -74,6 +86,15 @@ class TodayViewController: BaseViewController {
     // MARK: - Interface
     
     fileprivate func createUserInterface() {
+        emptyStateView = EmptyStateView.newAutoLayout()
+        emptyStateView.delegate = self
+        emptyStateView.isHidden = true
+        
+        view.addSubview(emptyStateView)
+        
+        emptyStateView.autoPinEdgesToSuperviewEdges()
+        
+        
         weatherImageView = UIImageView.newAutoLayout()
         weatherImageView.autoSetDimensions(to: CGSize(width: WeatherImageViewDimension,
                                                       height: WeatherImageViewDimension))
@@ -220,11 +241,12 @@ class TodayViewController: BaseViewController {
                               for: UIControlEvents.touchUpInside)
         
         
-        let containerStackView = UIStackView(arrangedSubviews: [UIView(),
+        containerStackView = UIStackView(arrangedSubviews: [UIView(),
                                                                 temperatureStackView,
                                                                 indicatorContainerView,
                                                                 shareButton,
                                                                 UIView()])
+        containerStackView.isHidden = true
         containerStackView.axis = UILayoutConstraintAxis.vertical
         containerStackView.alignment = UIStackViewAlignment.center
         containerStackView.distribution = UIStackViewDistribution.equalSpacing
@@ -248,6 +270,8 @@ class TodayViewController: BaseViewController {
         self.windLabel.title = "\(weather.wind) km/h"
         self.windDirectionLabel.title = weather.windDirection
         self.pressureLabel.title = "\(weather.pressure) hPa"
+        
+        containerStackView.isHidden = false
     }
     
     // MARK: - Load Data
@@ -312,5 +336,15 @@ class TodayViewController: BaseViewController {
         
         let controller = UIActivityViewController(activityItems: [text, url], applicationActivities: nil)
         navigationController?.present(controller, animated: true, completion: nil)
+    }
+}
+
+// MARK: - EmptyStateViewDelegate
+
+extension TodayViewController: EmptyStateViewDelegate {
+    func emptyStateViewDidTapButton(_ view: EmptyStateView) {
+        if let url = URL(string: UIApplicationOpenSettingsURLString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

@@ -67,4 +67,8 @@ extension UIColor {
     public class func primaryButtonTitleColor() -> UIColor {
         return hexStringToUIColor(hex: "#FF8847")
     }
+    
+    public class func overlayButtonBackgroundColor() -> UIColor {
+        return hexStringToUIColor(hex: "#2F91FF")
+    }
 }
