@@ -79,8 +79,6 @@ class ForecastTableViewCell: UITableViewCell {
         contentView.addSubview(temperatureLabel)
         
         temperatureLabel.autoPinEdge(toSuperviewEdge: ALEdge.right, withInset: DefaultInset)
-        temperatureLabel.autoSetDimension(ALDimension.width, toSize: 81.0)
-        temperatureLabel.autoSetDimension(ALDimension.height, toSize: 40.0)
         temperatureLabel.autoAlignAxis(toSuperviewAxis: ALAxis.horizontal)
         
         

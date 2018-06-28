@@ -11,7 +11,7 @@ import UIKit
 let OverlayButtonDefaultSize = CGSize(width: 220.0, height: 48.0)
 
 class OverlayButton: UIButton {
-
+    
     // MARK: - Constructors
     
     required init?(coder aDecoder: NSCoder) {

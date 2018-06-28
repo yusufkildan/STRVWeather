@@ -45,7 +45,7 @@ class ForecastTableViewController: BaseTableViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 104.0, bottom: 0.0, right: 0.0)
         tableView.backgroundView = UIView()
         
-        
+        // Get persisted data from Realm Database
         let forecastArray = Array(RealmManager.sharedManager.getFiveDayForecast())
         self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecastArray)
         
@@ -100,10 +100,10 @@ class ForecastTableViewController: BaseTableViewController {
                     return
                 }
                 
+                // Save five day forecast to Realm Database
                 RealmManager.sharedManager.saveFiveDayForecast(forecasts: forecasts)
                 
                 self.dailyForecasts = DailyForecast.groupForecasts(forecasts: forecasts)
-                
                 
                 self.tableView.reloadData()
                 self.finishLoading(withState: ControllerState.none, andMessage: nil)
@@ -129,8 +129,8 @@ class ForecastTableViewController: BaseTableViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        
         cell.time = dateFormatter.string(from: forecast.date)
+        
         self.navigationItem.title = forecast.city
     }
     

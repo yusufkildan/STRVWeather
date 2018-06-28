@@ -30,7 +30,7 @@ class EmptyStateView: UIView {
     fileprivate var title: String?
     fileprivate var subtitle: String?
     fileprivate var buttonTitle: String?
-
+    
     //MARK: - Constructors
     
     override init(frame: CGRect) {

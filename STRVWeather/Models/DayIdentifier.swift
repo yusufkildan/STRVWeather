@@ -25,7 +25,7 @@ class DayIdentifier: Hashable, Equatable, Comparable {
         self.day   = day
     }
     
-    // MARK: - NSDate
+    // MARK: - Date
     
     static func fromComponents(components: DateComponents) -> DayIdentifier {
         return DayIdentifier(year: components.year!, month: components.month!, day: components.day!)

@@ -64,7 +64,7 @@ class TodayViewController: BaseViewController {
         log.debug("Request location access permission.")
         LocationManager.sharedManager.requestLocationAccessPermission { (granted, error) in
             
-            log.debug("Granded: \(granted)")
+            log.debug("Granted: \(granted)")
             
             if granted {
                 self.loadData(withRefresh: true)
@@ -72,9 +72,9 @@ class TodayViewController: BaseViewController {
             } else {
                 self.emptyStateView.isHidden = false
                 self.emptyStateView.update(withImage: UIImage(named: "LocationService"),
-                                      andMessageTitle: "Enable Location Service",
-                                      andMessageSubtitle: "'STRVWeather' need to know where you are in order to show forecasts!",
-                                      andButtonTitle: "Enable")
+                                           andMessageTitle: "Enable Location Service",
+                                           andMessageSubtitle: "'STRVWeather' need to know where you are in order to show forecasts!",
+                                           andButtonTitle: "Enable")
                 
                 self.view.addSubview(self.emptyStateView)
                 
@@ -84,7 +84,7 @@ class TodayViewController: BaseViewController {
     }
     
     // MARK: - Interface
-    
+
     fileprivate func createUserInterface() {
         emptyStateView = EmptyStateView.newAutoLayout()
         emptyStateView.delegate = self
@@ -242,10 +242,10 @@ class TodayViewController: BaseViewController {
         
         
         containerStackView = UIStackView(arrangedSubviews: [UIView(),
-                                                                temperatureStackView,
-                                                                indicatorContainerView,
-                                                                shareButton,
-                                                                UIView()])
+                                                            temperatureStackView,
+                                                            indicatorContainerView,
+                                                            shareButton,
+                                                            UIView()])
         containerStackView.isHidden = true
         containerStackView.axis = UILayoutConstraintAxis.vertical
         containerStackView.alignment = UIStackViewAlignment.center
@@ -316,8 +316,8 @@ class TodayViewController: BaseViewController {
                 RealmManager.sharedManager.saveCurrentWeather(weather: weather)
                 
                 Database.database().reference().child("Forecasts").childByAutoId().updateChildValues(["lat": location.coordinate.latitude,
-                                                                                      "lon": location.coordinate.longitude,
-                                                                                      "temperature": weather.temperature])
+                                                                                                      "lon": location.coordinate.longitude,
+                                                                                                      "temperature": weather.temperature])
                 
                 self.finishLoading(withState: ControllerState.none, andMessage: nil)
                 

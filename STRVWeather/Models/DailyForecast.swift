@@ -46,6 +46,7 @@ class DailyForecast {
     
     // MARK: - Group Forecasts
     
+    ///Group all forecasts into days
     static func groupForecasts(forecasts: [Forecast]) -> [DailyForecast] {
         
         guard !forecasts.isEmpty else {

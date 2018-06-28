@@ -128,7 +128,7 @@ class NetworkClient {
                 let forecast = Forecast(withJSON: json, andCityName: cityName)
                 forecasts.append(forecast)
             }
-
+            
             completion(forecasts, nil)
         }
     }
