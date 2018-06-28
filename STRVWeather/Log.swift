@@ -6,7 +6,6 @@
 //  Copyright © 2018 yusuf_kildan. All rights reserved.
 //
 
-import Foundation
 import SwiftyBeaver
 
 let log = SwiftyBeaver.self
